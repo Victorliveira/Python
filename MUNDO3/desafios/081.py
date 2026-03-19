@@ -1,20 +1,17 @@
 #Programa que le vários num e coloca numa lista. a- quantos números foram digitados. b-a lista de valores descrescente. c-Se o valor 5 foi digitado e está ou n na lista
 
 num = []
-cont= 0
 
 while True:
-    numad = int(input('Digite um valor: '))
-    num.append(numad)
-    cont +=1
+    num.append(int(input('Digite um valor: ')))
     parar = input('Deseja continuar? S/N ').upper()
     while parar not in ('SN'):
         print('Operação incorreta, digite novamente!')
         parar = input('Deseja continuar? S/N ').upper()
     if parar == 'N':
         break
-
-print(f'Foram digitados {cont} valores.')
+print('-='*30)
+print(f'Foram digitados {len(num)} valores.')
 num.sort(reverse=True)
 print(f'Lista em ordem descrescente: {num}')
 if 5 in num:

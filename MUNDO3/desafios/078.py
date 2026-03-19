@@ -4,6 +4,7 @@ num =[]
 for v in range(0,5):
     num.append(int(input(f'Digite um valor para a posição {v}: ')))
 
+print('-='*30)
 print(f'Você digitou os valores {num}')
 
 print(f'O valor {max(num)} foi o maior digitado e está nas posições ', end='')

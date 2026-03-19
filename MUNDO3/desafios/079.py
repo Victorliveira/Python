@@ -10,10 +10,10 @@ while True:
     else:
         print('Valor duplicado! Não foi adicionado!')
     parar = input('Deseja parar? S/N ').upper()
-    while parar not in('SN'):
+    while parar not in 'SN':
         print('Operação incorreta, digite novamente')
         parar = input('Deseja parar? S/N ').upper()
-    if parar in ('S'):
+    if parar in 'S':
         break
 num.sort()
 print(f'Essa é a lista em ordem crescente: {num}')
