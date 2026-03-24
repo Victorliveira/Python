@@ -1,4 +1,4 @@
-# listas s]ao feitas com []
+# listas são feitas com []
 
 lanche = ['burguer','suco','pizza','pudim']
 print(lanche)

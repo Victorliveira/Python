@@ -2,9 +2,7 @@
 
 
 exp = input("Digite uma expressão algoritimíca: ")
-
 expv = []
-
 for c in exp:
     if c == '(':
         expv.append(c)
@@ -14,8 +12,6 @@ for c in exp:
         else:
             expv.append(c)
             break
-
-
 if not expv:
     print('Expressão correta')
 else:

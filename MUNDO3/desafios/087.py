@@ -1,0 +1,1 @@
+# Aprimore o desafio 86, mostrando no final: a- soma de todos os valores pares digitados. b- soma dos valores da terceira coluna. c- O maior valor da segunda linha
