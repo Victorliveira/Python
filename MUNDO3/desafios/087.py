@@ -11,11 +11,15 @@ for l in range(tmatriz):
         linha.append(int(input(f'Digite um número para a linha {l+1} da coluna {v}: ')))
     matriz.append(linha)
 
-
+#soma todos os números pares
 for c in matriz:
     for num in c:
         if num %2 == 0:
             somap += num
+
+#soma todos os números da coluna 3
+for pos,v in enumerate(matriz):
+    somac+= matriz[pos][2]
 
 #printa a matriz        
 for c in matriz:
@@ -23,4 +27,4 @@ for c in matriz:
 
 print(f'A soma de todos os números pares é igual a {somap}')
 print(f'O maior valor da linha 2 é {max(matriz[1])}')
-print(f'A soma da terceira coluna é igual a  ')
+print(f'A soma da terceira coluna é igual a {somac}')
