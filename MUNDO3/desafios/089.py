@@ -6,8 +6,8 @@ print('Cadastro de Alunos')
 
 while True:
     nome_nota.append(input('Nome: '))
-    nome_nota.append(int(input('Nota 1: ')))
-    nome_nota.append(int(input('Nota 2: ')))
+    nome_nota.append(float(input('Nota 1: ')))
+    nome_nota.append(float(input('Nota 2: ')))
     dados.append(nome_nota[:])
     nome_nota.clear()
     parar = str(input('Deseja continuar? [S/N] ')).upper()
@@ -24,7 +24,7 @@ for pos, v in enumerate(dados):
     print('='*20)
     print(f'Nome: {dados[pos][0]}')
     print(f'Id Aluno: {pos}')
-    print(f'Média: {media}')
+    print(f'Média: {media:.1f}')
 
 
 while True:
@@ -45,4 +45,4 @@ while True:
                 rep = str(input('Deseja ver outras notas? [S/N]: ')).upper()
     break
 
-print('PROGRAMA FINALIZADO')
+print('Volte Sempre')
