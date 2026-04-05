@@ -2,6 +2,7 @@
 
 nome_nota= []
 dados = []
+print('Cadastro de Alunos')
 
 while True:
     nome_nota.append(input('Nome: '))

@@ -3,15 +3,13 @@
 
 pessoas = list()
 dados = list()
-cont = 0
 
 #Cadastrar uma quantidade sem limite de pessoas e seus pesos
 while True:
-    dados.append(input('Nome: ').capitalize())
-    dados.append(int(input('Peso: ')))
+    dados.append(str(input('Nome: ').capitalize()))
+    dados.append(float(input('Peso: ')))
     pessoas.append(dados[:])
     dados.clear()
-    cont +=1
     parar = input('Deseja continuar? [S/N] ').upper()
     if parar not in ('SN'):
         print('Operação inválida! Digite novamente')
@@ -26,12 +24,12 @@ minpeso = min(pessoas, key=lambda pessoa: pessoa[1])[1]
 print('-='*40)
 
 
-print(f'{cont} pessoas foram cadastradas.')
+print(f'{len(pessoas)} pessoas foram cadastradas.')
 
 print(f'O maior peso registrado foi {maxpeso}Kg.', end=' ')
 for p, v in enumerate(pessoas):
     if pessoas[p][1] == maxpeso:
-        print(pessoas[p][0], end='.. ')
+        print(pessoas[p][0], end=' ')
 print(f'\nO menor peso registrado foi {minpeso}Kg.', end=' ')
 for p, v in enumerate(pessoas):
     if pessoas[p][1] == minpeso:

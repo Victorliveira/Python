@@ -2,8 +2,9 @@
 
 from random import randint
 from time import sleep
-
+print('-='*30)
 print('Gerador de bilhetes MEGA SENA!')
+print('-='*30)
 sleep(0.5)
 qte = int(input('Deseja realizar quantos palpites? '))
 
@@ -19,7 +20,7 @@ for c in range(qte):
         if num not in ticket:
             ticket.append(num)
     sleep(0.6)
-    print(f'jogo {cont}: ',ticket)
+    print(f'jogo {cont}: ',sorted(ticket))
     cont+=1
 print()
-print('PROGRAMA FINALIZADO')
+print('-='*5,' < BOA SORTE > ', '-='*5)

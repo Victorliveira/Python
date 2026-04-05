@@ -20,5 +20,8 @@ while True:
 
 #printa em forma de matriz
 for linha in matriz:
-    print(linha)
+    for pos,v in enumerate(linha):
+        print(f'[{v:^5}]', end=' ')
+        if pos ==2:
+            print()
     
