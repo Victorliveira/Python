@@ -14,16 +14,16 @@ print('Valores Sorteados')
 sleep(1)
 for k,v in jogos.items():
     print(f'O {k} tirou {v}')
-    sleep(0.7)
+    sleep(0.8)
 
 #Apresenta o ranking dos jogadores usando como base os valores dos dados
 
 jogosorted = dict(sorted(jogos.items(), key=lambda item: item[1], reverse=True))
 
-print('Ranking dos jogadores')
+print('\nRanking dos jogadores')
 sleep(1)
 cont = 1
 for k,v in jogosorted.items():
     print(f'{cont}° lugar: {k} com {v}')
     cont +=1
-    sleep(0.7)
+    sleep(0.8)
