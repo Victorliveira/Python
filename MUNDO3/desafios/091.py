@@ -2,7 +2,7 @@
 
 from random import randint
 from time import sleep
-
+from operator import itemgetter
 jogos = dict()
 
 #Sorteador de dados
@@ -18,7 +18,7 @@ for k,v in jogos.items():
 
 #Apresenta o ranking dos jogadores usando como base os valores dos dados
 
-jogosorted = dict(sorted(jogos.items(), key=lambda item: item[1], reverse=True))
+jogosorted = dict(sorted(jogos.items(), key=itemgetter(1), reverse=True))
 
 print('\nRanking dos jogadores')
 sleep(1)

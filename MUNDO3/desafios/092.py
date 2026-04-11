@@ -4,17 +4,17 @@ from datetime import datetime
 
 dados = dict()
 
-dados['Nome'] = str(input('Nome: '))
+dados['nome'] = str(input('Nome: '))
 ano = int(input('Ano de Nascimento: '))
 anoatual = datetime.now().year
-dados['Idade'] = anoatual - ano
+dados['idade'] = anoatual - ano
 
-carteira = int(input('Carteira de trabalho (0 não tem): '))
-if carteira != 0:
-    dados['Ctps'] = int(input('Ano de Contratação: '))
-    dados['Salário'] = float(input('Salário: R$ '))
-    dados['Aposentadoria'] = (dados['Contratacao'] - ano) +35
+dados['ctps'] = int(input('Carteira de trabalho (0 não tem): '))
+if dados['ctps'] != 0:
+    dados['contratação'] = int(input('Ano de Contratação: '))
+    dados['salário'] = float(input('Salário: R$ '))
+    dados['aposentadoria'] = (dados['contratação'] - ano) +35
 
 print('-='*30)
 for k, v in dados.items():
-    print(f'{k} tem o valor {v}')
+    print(f' - {k} tem o valor {v}')
