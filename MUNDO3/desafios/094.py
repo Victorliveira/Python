@@ -2,47 +2,43 @@
 
 dados = dict()
 grupo = list()
-contp = mediai = 0
+soma = media = 0
 
 while True:
+    dados.clear()
     dados['Nome'] = str(input('Nome: ')).capitalize()
     dados['Idade'] = int(input('Idade: '))
     dados['Sexo'] = str(input('Sexo [M/F]: '))[0].upper()
     while dados['Sexo'] not in 'MF':
-         print('Operação Inválida. Digite novamente!')
+         print('Erro. Digite apenas M ou F!')
          dados['Sexo'] = str(input('Sexo [M/F]: '))[0].upper()
-    contp+=1
-    mediai += dados['Idade']
+    soma += dados['Idade']
     grupo.append(dados.copy())
     seguir = str(input('Deseja continuar? [S/N] '))[0].upper()
     while seguir not in 'NS':
-        print('Operação Inválida. Digite novamente!')
+        print('Erro. Digite apenas N ou S!')
         seguir = str(input('Deseja continuar? [S/N] '))[0].upper()
     if seguir == 'N':
         break
 
-mediai = mediai/contp
+media = soma/len(grupo)
 
 print('-='*30)
-print(f'- O grupo tem {contp} pessoas')
-print(f'- A média de idade é de {mediai:.2f} anos.')
+print(f'- O grupo tem {len(grupo)} pessoas')
+print(f'- A média de idade é de {media:.2f} anos.')
 print(f'- As mulheres cadastradas foram:', end= ' ')
 # mostra o nome das mulheres cadastradas
 for p,c in enumerate(grupo):
-    if grupo[p]['Sexo'] == 'F':
-            for k,v in c.items():
-                 if k == 'Nome':
-                      print(v, end=' ')
-
+    if c['Sexo'] == 'F':
+        print(c['Nome'], end=' ')
 
 print(f'\n- Lista das pessoas que estão acima da média de idade: ')
-
+print()
 # mostra as pessoas acima da média de idade  
 for p,c in enumerate(grupo):
-    if grupo[p]['Idade'] >= mediai:
-        print()
+    if c['Idade'] >= media:
         for k,v in c.items():
-            print(f'{k} = {v};', end=' ')
+            print(f'    {k} = {v};', end=' ')
         print()
 
 print('<<ENCERRADO>>')
