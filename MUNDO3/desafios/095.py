@@ -7,6 +7,7 @@ partida = dict()
 gols = list()
 total = 0
 while True:
+    campeonato.clear()
     campeonato['nome'] = str(input('Nome do Jogador: ')).capitalize()
     partidas = int(input(f'Quantas partidas {campeonato['nome']} jogou? '))
 
@@ -32,10 +33,10 @@ while True:
 
 print('-='*30)
 
-print(f"{'cod':<3}{'nome':^10}{'gols':<20}{'total':>5}")
+print(f"{'cod':<3}{'nome':^15}{'gols':<20}{'total':>5}")
 for pos, v in enumerate(jogadores):
     print(f"{pos:<3}", end='')
-    print(f"{jogadores[pos]['nome']:^10}", end='')
+    print(f"{jogadores[pos]['nome']:^15}", end='')
     print(f"{str(jogadores[pos]['gols']):<20}", end='')
     print(f"{jogadores[pos]['total']:^5}", end='')
     print()
@@ -45,13 +46,14 @@ while True:
     if dados == 999:
         break
     while dados > len(jogadores)-1:
-        print('Operação Inválida. Digite novamente!')
+        print(f'ERRO! Não existe jogador no código {dados}')
         dados = int(input('Mostrar dados de qual jogador? (999 para parar) '))
     
     cont = 0
+    print(f'LEVANTAMENTO DO JOGADOR {jogadores[dados]['nome']}')
     for c in partidajog[dados]:
-        print(f'    => Na partida {c}, fez {partidajog[dados][f'partida {cont+1}']} gols.')
+        print(f'    => Na {c} fez {partidajog[dados][f'partida {cont+1}']} gols.')
         cont+=1
             
     
-print('<<ENCERRADO>>')
+print('Volte Sempre!')
