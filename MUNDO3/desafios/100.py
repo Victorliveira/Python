@@ -7,8 +7,8 @@ def sorteia(lst):
     print('Sorteando os 5 valores da lista:', end=' ')
     for c in range(0,5):
         sleep(0.3)
-        lst.append(randint(0,10))
-        print(lst[c], end=' ')
+        lst.append(randint(1,10))
+        print(lst[c], end=' ', flush=True)
     print('PRONTO!')
 
 def somaPar(lst):

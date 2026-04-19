@@ -7,18 +7,18 @@ def contador(i,f,p):
     if p == 0:
         p = 1
     if p <0:
-        p = p *-1
+        p *= -1
     print(f'Contagem de {i} até {f} pulando de {p} em {p}')
     sleep(0.5)
-    if i < f:
+    if i <= f:
         while i <= f:
             sleep(0.2)
-            print(i, end=' ')
+            print(i, end=' ', flush=True)
             i+=p
     else:
         while i >= f:
             sleep(0.2)
-            print(i, end=' ')
+            print(i, end=' ', flush=True)
             i-=p     
     sleep(0.2)  
     print('FIM!')

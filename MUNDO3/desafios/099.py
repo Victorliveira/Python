@@ -7,7 +7,7 @@ def maior(*lst):
     print('Analisando os valores passados...')
     for c in lst:
         sleep(0.15)
-        print(c, end=' ')
+        print(c, end=' ', flush=True)
     print(f'Foram informados {len(lst)} valores ao todo')
     print(f'O maior valor informado foi', end=' ')
     if lst:
