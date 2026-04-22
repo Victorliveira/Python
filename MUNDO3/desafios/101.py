@@ -17,7 +17,7 @@ def voto(idade):
         return 'VOTO OBRIGATÓRIO'
     
 
-help(voto)
+#help(voto)
 
 nasc = int(input('Em que ano você nasceu? '))
 idade = datetime.now().year - nasc 
