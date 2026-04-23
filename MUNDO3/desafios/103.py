@@ -2,6 +2,11 @@
 # Programa deverá ser capaz de mostrar a ficha do jogador, mesmo que alfum dado não tenha sido informado corretamente.
 
 def ficha(nome,gol):
+    """
+    -> Apresenta uma ficha técnica com o nome do Jogador e quantidade de gols
+    :param nome: Nome do Jogador
+    :param gol: Quantidade de gols
+    """
     if not nome:
         nome = '<desconhecido>'
     if not gol:
