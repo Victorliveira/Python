@@ -1,7 +1,5 @@
 # Programa que tenha uma função fatorial() que receba doi parâmetros: o primeiro que indique o num a calcular e o outro chamado show, que será um valor lógico(opcional) indicando se será mostrado ou não na tela o processo de cálculo do fatorial
 
-from time import sleep
-
 def fatorial(num,show=False):
     """
     -> Calcula o Fatorial de um número.
@@ -9,9 +7,10 @@ def fatorial(num,show=False):
     :param show: (opcional) Mostrar ou não a conta.
     :return: O valor do Fatorial de um número n.
     """
+    from time import sleep
     c = num
     while c >= 1:
-        if show == True:
+        if show:
             if c >1:
                 sleep(0.2)
                 print(c, end=' x ', flush=True)
@@ -23,5 +22,5 @@ def fatorial(num,show=False):
             num *= c
     return num
         
-print(fatorial(5, True))
-
+print(fatorial(5, True ))
+help(fatorial)

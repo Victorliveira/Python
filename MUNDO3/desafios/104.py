@@ -9,7 +9,8 @@ def leiaInt(leia):
     while not teste.isdigit():
         print('ERRO! Digite um número inteiro válido.')
         teste = input(leia)
+    return teste
 
-
+#Programa Principal
 n = leiaInt('Digite um número: ')
 print(f'Você acabou de digitar o número {n}')
