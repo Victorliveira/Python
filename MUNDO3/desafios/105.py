@@ -4,28 +4,25 @@
 def notas(*nota, sit=False):
     """
     -> Função que recebe n notas e informa, total de notas, maior nota, menor nota, média de nota e a situação total(opcional)
+    :nota: uma ou mais notas dos alunos (aceita várias)
     :param sit: Se sit for igual a True, a função apresenta a situação das notas
+    :return: dicionário com várias informações sobre a situação da turma
     """
     print('-'*20)
     dic = dict()
-    if not sit:
-        dic = {'total' : len(nota),
-            'maior': max(nota),
-            'menor': min(nota),
-            'média': (sum(nota)/len(nota))}
-    else:
-        med = sum(nota)/len(nota)
+    med = sum(nota)/len(nota)
+
+    dic['total'] = len(nota)
+    dic['maior'] = max(nota)
+    dic['menor'] = min(nota)
+    dic['média'] = med
+    if sit:
         if med >= 7:
-            situ = 'BOA'
+            dic['situação'] = 'BOA'
         elif med >= 5:
-            situ = 'RAZOÁVEL'
+            dic['situação'] = 'RAZOÁVEL'
         else:
-            situ = 'RUIM'
-        dic = {'total' : len(nota),
-            'maior': max(nota),
-            'menor': min(nota),
-            'média': med ,
-            'situação': situ}
+            dic['situação'] = 'RUIM'
     return dic
 
 #Programa Principal
