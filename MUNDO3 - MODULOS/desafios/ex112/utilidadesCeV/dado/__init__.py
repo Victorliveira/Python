@@ -6,7 +6,7 @@ def leiaDinheiro(ler):
         if teste.count('.') <=1 and teste.replace('.','').isdigit():
             break
         else:
-            print('ERRO! Digite um número valido')
+            print(f'ERRO: "{teste}" é um preço inválido!')
             teste = str(input(ler))
 
     return float(teste)
