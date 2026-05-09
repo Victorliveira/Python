@@ -1,9 +1,6 @@
 from time import sleep
 
-dados = dict()
-grupo = list()
 numero = 0
-
 def mostramsg(msg):
     print('-'*40)
     print(f'{msg:^40}')
@@ -38,6 +35,7 @@ def validaint(txt, max=99, vmax = False):
             except (TypeError,ValueError):
                 print('Erro, digite um número válido!')
             else:
+                return str(num)
                 break
     return num
 
@@ -53,17 +51,39 @@ def option():
         print('PROGRAMA ENCERRADO, VOLTE SEMPRE')
     
 def cadastrar():
+    arquivo = open('dados.txt','a')
     sleep(0.5)
     mostramsg('NOVO CADASTRO')
     sleep(0.3)
-    dados['Nome']= str(input('Nome: ')).capitalize().strip()
-    dados['Idade']= validaint('Idade', vmax=False)
-    grupo.append(dados.copy())
+    name = validanome('Nome')
+    age = validaint('Idade', vmax=False)
+    arquivo.write(f'{name:<5}\t; {age:>5} anos\n')
+    arquivo.close()
     menu()
 
 def ver():
     mostramsg('PESSOAS CADASTRADAS')
-    for pos,v in enumerate(grupo):
-        print(f'{v["Nome"]:<20} {v["Idade"]:>4} anos')
+    arquivo = open('dados.txt','a+')
+    arquivo.seek(0)
+    for linha in arquivo:
+        linha.split(';')
+        print(linha.replace(';',''), end='')
+    arquivo.close()
     menu()
 
+def validanome(txt):
+    while True:
+        ok = True
+        name = input(f'{txt}: ').capitalize().strip()
+        if name == '':
+            print('Erro, digite um nome válido')
+            ok = False
+        else:
+            for c in name:
+                if c.isnumeric():
+                    print('Erro, digite um nome válido!')
+                    ok = False
+                    break
+        if ok:
+            break
+    return str(name)
