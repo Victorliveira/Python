@@ -10,10 +10,10 @@ def leiaInt(leia):
             teste = int(input(leia))
         except (ValueError, TypeError):
             print('Tivemos um erro com o tipo de valor digitado')
+            continue
         except KeyboardInterrupt:
             print('O usuário decidiu não informar o valor')
-            teste = 0
-            return teste
+            return 0
             break
         else:
             return teste
@@ -39,4 +39,4 @@ def leiaFloat(leia):
             return teste
             break
 
-print(f'O valor inteiro digitado foi {leiaInt("Digite um Inteiro: ")} e o real foi {leiaFloat("Digite um Real: ")}')
+print(f'O valor inteiro digitado foi {leiaInt("Digite um número Inteiro: ")} e o real foi {leiaFloat("Digite um número Real: ")}')

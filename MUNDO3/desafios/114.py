@@ -2,8 +2,9 @@
 
 import requests
 
+
 try:
-    r = requests.get('https://pudim.com.br')
+    r = request.get('https://pudim.com.br')
     if r.status_code == 200:
         print('Foi possível acessar o site com sucesso')
     elif r.status_code == 404:
@@ -14,5 +15,4 @@ except:
     print('O site está fora do ar')
 finally:
     print('Volte Sempre!')
-
 
