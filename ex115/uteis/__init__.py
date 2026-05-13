@@ -3,15 +3,16 @@ from time import sleep
 numero = 0
 def mostramsg(msg):
     print('-'*40)
-    print(f'{msg:^40}')
+    print(msg.center(40))
     print('-'*40)
 
-def menu():
+def menu(lista):
     sleep(0.3)
     mostramsg('MENU PRINCIPAL')
-    print('1 - Ver pessoas cadastradas')
-    print('2 - Cadastrar nova Pessoa')
-    print('3 - Sair do sistema')
+    c = 1
+    for item in lista:
+        print(f'{c} - {item}')
+        c +=1
     print('-'*40)
     option()
 
@@ -46,9 +47,11 @@ def option():
         ver()
     elif numoption == 2:
         cadastrar()
-    else:
+    elif numoption ==3:
         sleep(0.5)
-        print('PROGRAMA ENCERRADO, VOLTE SEMPRE')
+        print('Saindo do sistema... Até logo!')
+    else:
+        print('Erro! Digite uma opção válida!')
     
 def cadastrar():
     arquivo = open('dados.txt','a')
@@ -59,7 +62,7 @@ def cadastrar():
     age = validaint('Idade', vmax=False)
     arquivo.write(f'{name:<5}\t; {age:>5} anos\n')
     arquivo.close()
-    menu()
+    menu(['Ver pessoas cadastradas','Cadastrar nova Pessoa','Sair do sistema'])
 
 def ver():
     mostramsg('PESSOAS CADASTRADAS')
@@ -69,7 +72,7 @@ def ver():
         linha.split(';')
         print(linha.replace(';',''), end='')
     arquivo.close()
-    menu()
+    menu(['Ver pessoas cadastradas','Cadastrar nova Pessoa','Sair do sistema'])
 
 def validanome(txt):
     while True:
